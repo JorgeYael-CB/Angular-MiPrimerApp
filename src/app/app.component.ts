@@ -6,6 +6,16 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  public counter:number = 10;
+  private defaultCounter: number = 10;
+  public counter:number = this.defaultCounter;
   public title:string = 'Hello World.';
+
+
+  protected increaseBy( value:number = 10 ):void {
+    this.counter += value;
+  }
+
+  protected resetCounter():void {
+    this.counter = this.defaultCounter;
+  }
 }
